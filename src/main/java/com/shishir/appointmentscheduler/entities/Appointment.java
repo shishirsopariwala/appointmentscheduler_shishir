@@ -17,14 +17,6 @@ public class Appointment {
     public Appointment() {
     }
 
-    public Long getOwnerEmpId() {
-        return ownerEmpId;
-    }
-
-    public void setOwnerEmpId(Long ownerEmpId) {
-        this.ownerEmpId = ownerEmpId;
-    }
-
     public Appointment(Long aptId, String aptTitle, String aptDescription, LocalDateTime start, LocalDateTime end, String aptStatus, Long ownerEmpId, List<Employees> employeeList) {
         this.aptId = aptId;
         this.aptTitle = aptTitle;
@@ -91,4 +83,13 @@ public class Appointment {
     public void setEmployeeList(List<Employees> employeeList) {
         EmployeeList = employeeList;
     }
+
+    public Long getOwnerEmpId() {
+        return ownerEmpId;
+    }
+
+    public void setOwnerEmpId(Long ownerEmpId) {
+        this.ownerEmpId = ownerEmpId;
+    }
+
 }

@@ -39,6 +39,8 @@ public class AppointmentServiceImpl implements AppointmentService {
         return this.appointments;
     }
 
+    //Get all the appointments
+
     @Override
     public Appointment getAppointment(Long aptId) {
         Appointment apt = null;
@@ -53,6 +55,8 @@ public class AppointmentServiceImpl implements AppointmentService {
         }
         return apt;
     }
+
+    //Create Appointment with Employee availability (Reject conflicting Appointment)
 
     @Override
     public String createAppointment(Appointment appointment) {
@@ -96,6 +100,8 @@ public class AppointmentServiceImpl implements AppointmentService {
         }
     }
 
+    // Delete Appointment
+
     @Override
     public String deleteAppointment(Appointment appointment) {
        // this.appointments.remove(appointment);
@@ -110,6 +116,8 @@ public class AppointmentServiceImpl implements AppointmentService {
         return "Appointment Deleted Successfully";
     }
 
+    // Update/Patch Appointment
+
     @Override
     public String updateAppointment(Appointment appointment) {
         for (Appointment appList:appointments)
@@ -123,6 +131,8 @@ public class AppointmentServiceImpl implements AppointmentService {
         }
         return "Appointment updated successfully";
     }
+
+    // Get List of Appointment for Employee
 
     @Override
     public List<Appointment> getMyAppointments(Long empId) {
@@ -145,6 +155,8 @@ public class AppointmentServiceImpl implements AppointmentService {
             }
     return apt;
     }
+
+    //Unsubscribe Appointment from Employee
 
     @Override
     public String unsubAppointment(List<Appointment> lstAppointment) {
