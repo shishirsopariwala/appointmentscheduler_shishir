@@ -135,16 +135,8 @@ public class AppointmentServiceImpl implements AppointmentService {
                     {
                         Long empListId = emp.getEmpId();
 
-                        System.out.println("empListId "+empListId);
-                        System.out.println("empId "+empId);
-                        System.out.println("Long.compare(empListId, empId) "+Long.compare(empListId, empId));
-
                         if( Long.compare(empListId, empId) == 0 )
                         {
-
-                            //System.out.println("empListId"+empListId);
-                            System.out.println("Inside compare ");
-                            System.out.println(appointment);
                             apt.add(appointment);
                         }
 
@@ -167,18 +159,12 @@ public class AppointmentServiceImpl implements AppointmentService {
                 if( Long.compare(lclAptId,appointment.getAptId())==0)
                 {
                     Long delEmpId = app.getEmployeeList().getFirst().getEmpId();
-                    System.out.println("delEmpId "+delEmpId);
                     List<Employees> empl = appointment.getEmployeeList();
                     for(Employees emplLst:empl)
                     {
-
                         Long empId = emplLst.getEmpId();
-                        System.out.println("EmpId "+empId);
-
                         if(Long.compare(delEmpId,empId)==0)
                         {
-                            System.out.println("delEmpId "+delEmpId);
-                            System.out.println("EmpId "+empId);
                             empl.remove(emplLst);
                         }
                     }
